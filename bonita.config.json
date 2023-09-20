@@ -1,0 +1,17 @@
+{
+  "root_dir": "./src/pages",
+  "root_file": "./src/pages/_app.tsx",
+  "root_styles": "./src/styles/globals.css",
+  "framework": "Nextjs",
+  "state": "./src/state",
+  "components": "./src/components",
+  "tailwind": {
+    "tw_config": "tailwind.config.ts",
+    "tw_plugins": [
+      "daisyui",
+      "tailwindcss-animate",
+      "tailwind-scrollbar",
+      "tailwindcss-elevation"
+    ]
+  }
+}

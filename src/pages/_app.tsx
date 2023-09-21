@@ -8,15 +8,12 @@ import Layout from "./layout";
 import "~/styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import "src/styles/cherry/cherry.css";
-import "@mantine/core/styles.css";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
-import { MantineProvider, createTheme } from "@mantine/core";
 
 
-const theme = createTheme({
-  /** Put your mantine theme override here */
-});
+
+
 
 const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { session, ...pageProps },}) => {
   useEffect(() => {
@@ -25,7 +22,7 @@ const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { ses
 }, []);
   
   return (
-    <MantineProvider theme={theme}>
+
       <SessionProvider session={session}>
         <Layout>
           <Component {...pageProps} />
@@ -43,7 +40,7 @@ const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { ses
           />
         </Layout>
       </SessionProvider>
-    </MantineProvider>
+ 
   );
 };
 

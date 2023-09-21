@@ -8,7 +8,7 @@ import { useFormHook } from "../form/useForm";
 import { api } from "~/utils/api";
 import { Edit, Loader } from "lucide-react";
 import { toast } from "react-toastify";
-import { UserProfileInputType } from "~/server/api/routers/profile";
+import { UserProfileInputType } from "~/server/api/routers/account";
 import { TheListInput } from "../form/inputs/ListInput";
 
 

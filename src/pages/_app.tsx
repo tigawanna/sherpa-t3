@@ -8,8 +8,15 @@ import Layout from "./layout";
 import "~/styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import "src/styles/cherry/cherry.css";
+import "@mantine/core/styles.css";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
+import { MantineProvider, createTheme } from "@mantine/core";
+
+
+const theme = createTheme({
+  /** Put your mantine theme override here */
+});
 
 const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { session, ...pageProps },}) => {
   useEffect(() => {
@@ -18,25 +25,25 @@ const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { ses
 }, []);
   
   return (
-    <ThemeProvider defaultTheme="system">
-        <SessionProvider session={session}>
-      <Layout>
+    <MantineProvider theme={theme}>
+      <SessionProvider session={session}>
+        <Layout>
           <Component {...pageProps} />
-        <ToastContainer
-          position="bottom-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
+          <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
           />
-      </Layout>
-          </SessionProvider>
-    </ThemeProvider>
+        </Layout>
+      </SessionProvider>
+    </MantineProvider>
   );
 };
 

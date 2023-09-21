@@ -2,11 +2,12 @@ import Link from "next/link";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import { useSession } from "next-auth/react";
 import { api } from "~/utils/api";
+import { NavbarOptions } from "./NavbarOptions";
 
 interface NavBarProps {}
 
 export function NavBar({}: NavBarProps) {
-  const { data: profile } = api.profile.getAll.useQuery();
+  const { data: profile } = api.user.getAll.useQuery();
   console.log("profile == ", profile);
 
   const { data: sessionData, } = useSession();
@@ -26,8 +27,7 @@ export function NavBar({}: NavBarProps) {
         </div>
       </div>
       <div className="flex justify-end ">
-        <ThemeToggle />
-   
+      <NavbarOptions/>  
       </div>
     </div>
   );

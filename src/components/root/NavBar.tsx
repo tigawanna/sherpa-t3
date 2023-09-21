@@ -1,9 +1,17 @@
 import Link from "next/link";
 import { ThemeToggle } from "../theme/ThemeToggle";
+import { useSession } from "next-auth/react";
+import { api } from "~/utils/api";
 
 interface NavBarProps {}
 
 export function NavBar({}: NavBarProps) {
+  const { data: profile } = api.profile.getAll.useQuery();
+  console.log("profile == ", profile);
+
+  const { data: sessionData, } = useSession();
+  console.log("session data == ",sessionData)
+
   return (
     <div className="sticky top-0 flex  w-full items-center justify-center bg-secondary/40 p-1">
       <div className="flex  w-full items-center justify-between gap-2">

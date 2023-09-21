@@ -19,10 +19,9 @@ const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { ses
   
   return (
     <ThemeProvider defaultTheme="system">
-      <Layout>
         <SessionProvider session={session}>
+      <Layout>
           <Component {...pageProps} />
-        </SessionProvider>
         <ToastContainer
           position="bottom-right"
           autoClose={3000}
@@ -34,8 +33,9 @@ const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { ses
           draggable
           pauseOnHover
           theme="dark"
-        />
+          />
       </Layout>
+          </SessionProvider>
     </ThemeProvider>
   );
 };

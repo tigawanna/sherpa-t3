@@ -14,7 +14,7 @@ export function NavBar({}: NavBarProps) {
   console.log("session data == ",sessionData)
 
   return (
-    <div className="sticky top-0 flex  w-full items-center justify-center bg-secondary/40 p-1">
+    <div className="sticky top-0 flex  w-full items-center justify-center bg-secondary/40 p-1 z-50">
       <div className="flex  w-full items-center justify-between gap-2">
         <div className="flex items-center justify-center gap-2">
           <Link className="text-xl font-bold" href="/">

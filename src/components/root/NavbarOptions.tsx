@@ -7,7 +7,7 @@ interface NavbarOptionsProps {
 
 export function NavbarOptions({}:NavbarOptionsProps){
 return (
- <div className='w-full h-full flex items-center justify-center'>
+ <div className='w-full h-full flex gap-3 items-center justify-center'>
     <AuthShowcase />
     <ThemeToggle />
  </div>

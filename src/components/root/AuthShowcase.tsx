@@ -1,5 +1,5 @@
 import { useSession, signOut, signIn } from "next-auth/react";
-
+import { UserCircle,LogOut } from "lucide-react";
 export function AuthShowcase() {
   const { data: sessionData } = useSession();
 
@@ -15,10 +15,10 @@ export function AuthShowcase() {
         {secretMessage && <span> - {secretMessage}</span>}
       </p> */}
       <button
-        className="rounded-full  font-semibold  no-underline transition hover:bg-base-200 w-10"
+        className="rounded-full  font-semibold  no-underline transition hover:text-accent"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
-        {sessionData ? "Sign out" : "Sign in"}
+        {sessionData ? <LogOut/> : <UserCircle/>}
       </button>
     </div>
   );

@@ -19,6 +19,7 @@ export function NavBar({}: NavBarProps) {
       </div>
       <div className="flex justify-end ">
         <ThemeToggle />
+   
       </div>
     </div>
   );

@@ -7,8 +7,16 @@ import { ToastContainer } from "react-toastify";
 import Layout from "./layout";
 import "~/styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
+import "src/styles/cherry/cherry.css";
+import { useEffect } from "react";
+import { themeChange } from "theme-change";
 
 const MyApp: AppType<{ session: Session | null }> = ({Component,pageProps: { session, ...pageProps },}) => {
+  useEffect(() => {
+  themeChange(false);
+  // 👆 false parameter is required for react project
+}, []);
+  
   return (
     <ThemeProvider defaultTheme="system">
       <Layout>
